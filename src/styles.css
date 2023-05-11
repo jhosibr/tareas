@@ -1,55 +1,49 @@
 .left-column {
-  width: 25%;
-  float: left;
+  width: 100%;
+  max-width: 400px;
   background-color: #fafafa;
   padding: 20px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-.middle-column {
-  width: 33.33%;
-  float: left;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  }
+  
+  .middle-column {
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
-}
-
-.right-column {
-  width: 20%;
-  float: left;
+  margin-bottom: 20px;
+  }
+  
+  .right-column {
+  width: 100%;
+  max-width: 400px;
   background-color: #fafafa;
   padding: 20px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-/* Agregamos un contenedor para separar las columnas */
-.container {
-  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  }
+  
+  /* Agregamos un contenedor para separar las columnas */
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-}
-
-/* Estilo para los bordes de las columnas */
-.container:before,
-.container:after {
-  content: " ";
-  display: table;
-}
-.container:after {
-  clear: both;
-}
-
-/* Ajustamos el margen y el ancho del calendario */
-.calendar {
+  }
+  
+  /* Ajustamos el margen y el ancho del calendario */
+  .calendar {
   margin-bottom: 20px;
   border-collapse: collapse;
   max-height: 480px;
   width: 100%;
-}
-
-/* Estilos para las filas y celdas del calendario */
-.calendar th {
+  overflow: auto;
+  }
+  
+  /* Estilos para las filas y celdas del calendario */
+  .calendar th {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
@@ -58,9 +52,9 @@
   border: 1px solid #e1e1e1;
   padding: 10px;
   height: 48px;
-}
-
-.calendar td {
+  }
+  
+  .calendar td {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -68,36 +62,108 @@
   border: 1px solid #e1e1e1;
   padding: 10px;
   height: 48px;
-}
-
-/* Estilos para el día seleccionado y el día actual en el calendario */
-.calendar td.today {
+  }
+  
+  /* Estilos para el día seleccionado y el día actual en el calendario */
+  .calendar td.today {
   background-color: #ffefd5;
-}
-
-.calendar td.selected {
+  }
+  
+  .calendar td.selected {
   background-color: #ffd5cd;
-}
-
-/* Estilo para el reloj */
-#clock {
-  font-size: 36px;
+  }
+  
+  /* Estilo para el reloj */
+  #clock {
+  font-size: 4vw;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-}
-
-/* Estilo para el usuario */
-#user {
-  font-size: 18px;
+  }
+  
+  /* Estilo para el usuario */
+  #user {
+  font-size: 2vw;
   font-weight: bold;
   text-align: right;
   margin-bottom: 20px;
-}
-
-/* Estilo para el ícono de logout */
-#logout-icon {
-  font-size: 24px;
+  }
+  
+  /* Estilo para el ícono de logout */
+  #logout-icon {
+  font-size: 4vw;
   text-align: center;
   margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    .left-column, .middle-column, .right-column {
+    width: 100%;
+    float: none;
+    border-radius: 0;
+    padding: 10px;
+    margin: 0;
+    }
+    }
+    /* Estilos para pantalla de escritorio */
+@media (min-width: 768px) {
+  .left-column {
+    width: 50%;
+    float: left;
+  }
+
+  .middle-column {
+    width: 50%;
+    float: left;
+  }
 }
+/* Alineamos el formulario a la izquierda */
+.form-container {
+  text-align: left;
+  }
+  
+  /* Centramos el calendario */
+  .calendar {
+  margin: 0 auto;
+  display: block;
+  }
+  
+  /* Alineamos el reloj a la derecha */
+  #clock {
+  text-align: right;
+  }
+  #clock.right-column {
+    max-width: 400px;
+  }
+  .calendar.middle-column {
+    max-width: 600px;
+  }
+  .left-column {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .middle-column {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .right-column {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #contenedor-principal {
+    display: flex;
+    justify-content: space-between;
+  }
+  
